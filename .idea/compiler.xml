@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="sys_user" />
         <module name="sys_common" />
+        <module name="sys_service" />
       </profile>
     </annotationProcessing>
   </component>
