@@ -33,7 +33,7 @@ public class ServiceController {
     public String connectTest(String param){
 //        String s = "********** connect success **********";
 //        System.out.println("provider:"+s);
-//        System.out.println("get param:"+param);
+        System.out.println("get param from service:"+param);
 //        String s2 = restTemplate.getForObject("http://sys-user/user/connectTest",String.class);
 //        System.out.println(s2);
 //        return s;
