@@ -2,6 +2,8 @@ package org.example.service.controller;
 
 import org.example.service.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -14,6 +16,7 @@ import javax.annotation.Resource;
  * @Date: create in 2023/4/21 8:52
  */
 @RestController
+@RefreshScope
 @RequestMapping("/service")
 public class ServiceController {
 
@@ -39,5 +42,23 @@ public class ServiceController {
 //        return s;
         return userService.connectTest(param);
     }
+
+
+    @RequestMapping("/f1")
+    public String f1(){
+        System.out.println("============ in f1 ============");
+        int i = 100/0;
+        return "f1";
+    }
+
+    @Value("${config.info}")
+    private String config;
+
+    @RequestMapping("/f2")
+    public String f2(){
+        System.out.println("============ in f2 ============");
+        return config;
+    }
+
 
 }

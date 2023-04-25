@@ -1,0 +1,14 @@
+server:
+  port: 8999
+spring:
+  application:
+    name: sys-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 101.89.214.164:8848
+      config:
+        server-addr: 101.89.214.164:8848
+        file-extension: yaml
+        namespace: e5740350-b8ba-4fcb-8a71-977a15086d17
+        group: G1

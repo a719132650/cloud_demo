@@ -6,8 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="sys_user" />
+        <module name="sys_gateway" />
         <module name="sys_common" />
+        <module name="sys_user" />
         <module name="sys_service" />
       </profile>
     </annotationProcessing>
