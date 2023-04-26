@@ -12,3 +12,14 @@ spring:
         file-extension: yaml
         namespace: e5740350-b8ba-4fcb-8a71-977a15086d17
         group: G1
+    sentinel:
+      transport:
+#        dashboard: 101.89.214.164:6001
+        dashboard: localhost:8080
+        port: 8719
+#        client-ip: 114.218.31.110
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
