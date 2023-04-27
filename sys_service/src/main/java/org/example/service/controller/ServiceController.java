@@ -1,10 +1,14 @@
 package org.example.service.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.alibaba.csp.sentinel.slots.block.BlockException;
 import org.example.service.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -58,6 +62,16 @@ public class ServiceController {
     public String f2(){
         System.out.println("============ in f2 ============");
         return config;
+    }
+
+    @RequestMapping("/f3")
+    @SentinelResource(value = "f3",blockHandler = "dealBlock")
+    public String f3(@RequestParam("key")String key){
+        return key;
+    }
+
+    public String dealBlock(String key, BlockException exception){
+        return ("this is block fullback for key: "+key);
     }
 
 
